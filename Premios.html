@@ -1,0 +1,355 @@
+
+<body>
+<div class="ruleta_giratory">  
+  <div class="ruleta-container">
+    <div class="ruleta-wrapper">
+      <div class="ruleta" id="ruleta">
+        <div class="flecha-lateral"></div>
+        <canvas id="canvas" width="480" height="480"></canvas>
+        <button class="girar-btn" id="girarBtn">GIRAR</button>
+      </div>
+    </div>
+    <h1 class="title_1">¡Gira la ruleta y gana!</h1>
+    <div class="premio" id="premio"></div>
+    <div class="watermark">Gieovanny Frias personal</div>
+  </div>
+  </div>
+  <style>
+  body {
+  background-color: #181818;
+  zoom:75%;
+}
+.ruleta_giratory {
+  /* El fondo se moverá al pseudo-elemento */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+position: relative;
+  top:50px;
+}
+    
+.ruleta_giratory::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+/*
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  background-image: url('fondo.png'), linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+*/
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 1;
+}
+.title_1 {
+  color: white;
+  margin-bottom: 18px;
+  text-shadow: 1px 1px 8px #fff8;
+  font-size: 1.1em;
+}
+.ruleta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100vw;
+  max-width: 100vw;
+  padding: 0;
+}
+.ruleta-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 100vw;
+  padding: 0;
+}
+.flecha-lateral {
+  position: absolute;
+  left: -18px;
+  right: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  width: 0; height: 0;
+  border-top: 28px solid transparent;
+  border-bottom: 28px solid transparent;
+  border-right: 44px solid #1a237e;
+  border-left: none;
+  margin: 0;
+  z-index: 5;
+  filter: drop-shadow(0 0 6px #fff8);
+}
+.ruleta {
+  width: 98vw;
+  height: 98vw;
+  max-width: 540px;
+  max-height: 540px;
+  border-radius: 50%;
+  border: 4px solid #1565c0;
+  box-shadow: 0 4px 32px #0003;
+  position: relative;
+  overflow: hidden;
+  background: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.ruleta canvas {
+  width: 96vw !important;
+  height: 96vw !important;
+  max-width: 520px !important;
+  max-height: 520px !important;
+  display: block;
+  margin: 0 auto;
+}
+.girar-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+  color: #1a237e;
+  border: none;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #0002;
+  transition: background 0.2s, transform 0.1s;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.girar-btn:active {
+  background: #1565c0;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(0.97);
+}
+.premio {
+  margin-top: 1px;
+  font-size: 1.2em;
+  color: #1a237e;
+  min-height: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 8px #fff, 0 0 4px #1976d2;
+}
+.fondo-fijo {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  background-image: url('fondo.png'), linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  opacity: 1;
+  pointer-events: none;
+}
+.watermark {
+  position: fixed;
+  bottom: 8px;
+  right: 10px;
+  font-size: 0.78em;
+  color: #1a237e;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 100;
+  font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+  user-select: none;
+}
+.watermark-izq {
+  left: 10px;
+  right: auto;
+}
+@media (max-width: 600px) {
+  .ruleta {
+    width: 99vw;
+    height: 99vw;
+    max-width: 370px;
+    max-height: 370px;
+    border-width: 3px;
+  }
+  .ruleta canvas {
+    width: 97vw !important;
+    height: 97vw !important;
+    max-width: 350px !important;
+    max-height: 350px !important;
+  }
+  .flecha-lateral {
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 28px solid #1a237e;
+    border-left: none;
+    left: -10px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .girar-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 0.95em;
+  }
+  .title_1{
+  margin: 18px 0 0 0; 
+  font-size: 1.1em;
+    color: red;
+  }
+  .watermark {
+    left: 10px;
+    right: auto;
+    font-size: 0.39em;
+  }
+}
+  </style>
+    <script src="src/components/Header-Footer/header_footer-main.js" defer></script>
+
+  <script>
+  
+  const premios = [
+  'Taza',
+  'Gorra',
+  'Mouse',
+  'Café',
+  'Dulces',
+  'Llavero',
+  'Camiseta',
+  'Audífonos',
+  'Botella',
+  'Cuaderno',
+  'Powerbank',
+  'Agenda',
+  'Bolígrafo',
+  'Sticker'
+];
+const colores = [
+  '#b3c6ff', '#5cacee', '#1976d2', '#64b5f6', '#2196f3', '#1565c0', '#90caf9', '#42a5f5', '#82b1ff', '#0d47a1', '#4fc3f7', '#1e88e5', '#80d8ff', '#2962ff'
+];
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const premioDiv = document.getElementById('premio');
+const girarBtn = document.getElementById('girarBtn');
+let anguloActual = 0;
+let girando = false;
+const audio = new Audio('sonido.mp3');
+audio.preload = 'auto';
+let audioPlaying = false;
+
+function dibujarRuleta() {
+  const radio = canvas.width / 2;
+  const botonRadio = Math.min(canvas.width, canvas.height) * 0.11; // Radio aproximado del botón de girar
+  for (let i = 0; i < premios.length; i++) {
+    const angInicio = (2 * Math.PI / premios.length) * i;
+    const angFin = angInicio + 2 * Math.PI / premios.length;
+    ctx.beginPath();
+    ctx.moveTo(radio, radio);
+    ctx.arc(radio, radio, radio, angInicio, angFin);
+    ctx.closePath();
+    ctx.fillStyle = colores[i % colores.length];
+    ctx.fill();
+    ctx.save();
+    ctx.translate(radio, radio);
+    ctx.rotate(angInicio + Math.PI / premios.length);
+    ctx.rotate(Math.PI); // Girar el texto para que esté "al revés" y se lea desde la flecha
+    ctx.textAlign = 'left';
+    // Ajustar tamaño de fuente según el largo del texto y la posición
+    let fontSize = 22;
+    ctx.font = `bold ${fontSize}px Segoe UI, Arial`;
+    // Si el texto está cerca del centro (ángulo cerca de 0 o PI), reducir aún más el ancho permitido
+    let sectorAngle = angInicio + Math.PI / premios.length;
+    let centralZone = (Math.abs(Math.cos(sectorAngle)) > 0.97); // cerca de la horizontal (donde está el botón)
+    let maxWidth = radio - 48;
+    if (centralZone) {
+      maxWidth = radio - botonRadio - 32; // reducir más para evitar el botón
+    }
+    while (ctx.measureText(premios[i]).width > maxWidth && fontSize > 10) {
+      fontSize -= 1;
+      ctx.font = `bold ${fontSize}px Segoe UI, Arial`;
+    }
+    ctx.fillStyle = '#fff';
+    ctx.strokeStyle = '#1a237e';
+    ctx.lineWidth = 4;
+    ctx.shadowColor = '#0008';
+    ctx.shadowBlur = 8;
+    ctx.strokeText(premios[i], 24 - radio, 12);
+    ctx.fillText(premios[i], 24 - radio, 12);
+    ctx.restore();
+  }
+}
+
+dibujarRuleta();
+
+function girarRuleta() {
+  if (girando) return;
+  girando = true;
+  premioDiv.textContent = '';
+  // Reproducir sonido SIEMPRE en el click, reiniciando el audio
+  audio.pause();
+  audio.currentTime = 0;
+  audio.play().catch(() => {}); // Ignora errores de autoplay
+  const vueltas = Math.floor(Math.random() * 3) + 5; // 5-7 vueltas
+  // Elegimos un ángulo final aleatorio
+  const anguloPorPremio = 2 * Math.PI / premios.length;
+  const anguloOffsetFlecha = Math.PI; // 180° (izquierda)
+  const anguloRandom = Math.random() * 2 * Math.PI;
+  const anguloFinal = (2 * Math.PI * vueltas) + anguloRandom;
+  const duracion = 10500; // 10.5 segundos
+  const inicio = performance.now();
+  function animar(now) {
+    const t = Math.min((now - inicio) / duracion, 1);
+    // Ease out cubic
+    const ease = 1 - Math.pow(1 - t, 3);
+    anguloActual = ease * anguloFinal;
+    ctx.save();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate(anguloActual);
+    ctx.translate(-canvas.width / 2, -canvas.height / 2);
+    dibujarRuleta();
+    ctx.restore();
+    if (t < 1) {
+      requestAnimationFrame(animar);
+    } else {
+      girando = false;
+      // Calcular el índice del premio alineado con la flecha izquierda
+      let anguloTotal = anguloFinal % (2 * Math.PI);
+      let anguloFlecha = (anguloOffsetFlecha - anguloTotal + 2 * Math.PI) % (2 * Math.PI);
+      let premioIndex = Math.floor(anguloFlecha / anguloPorPremio) % premios.length;
+      mostrarPremio(premioIndex);
+    }
+  }
+  requestAnimationFrame(animar);
+}
+
+girarBtn.addEventListener('click', girarRuleta);
+
+function mostrarPremio(idx) {
+  premioDiv.textContent = `¡Ganaste: ${premios[idx]}! 🎉`;
+}
+
+// Redibuja la ruleta si cambia el tamaño (responsive)
+window.addEventListener('resize', () => {
+  // Ajusta el tamaño del canvas según el tamaño del contenedor
+  const ruleta = document.getElementById('ruleta');
+  let size = ruleta.offsetWidth;
+  canvas.width = size;
+  canvas.height = size;
+  dibujarRuleta();
+});
+  </script>
+</body>
+
