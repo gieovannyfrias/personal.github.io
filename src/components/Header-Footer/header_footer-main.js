@@ -218,7 +218,7 @@ main {
             <li class="nav-item has-drop">
               <a href="/Instagram/" class="nav-link" target="_blank">Doc <span class="arrow">▶</span></a>
               <ul class="sub-submenu">
-                <li><a href="https://www.facebook.com/gieovannyfrias" target="_blank" class="nav-link">Bolsa de trabajo</a></li>
+                <li><a href="/Bolsa_de_empleo/" target="_blank" class="nav-link">Bolsa de trabajo</a></li>
               </ul>
             </li>
             <li><a href="/Eventos/" class="nav-link">Eventos</a></li>
