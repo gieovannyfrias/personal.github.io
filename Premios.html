@@ -5,6 +5,9 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
    <link rel="icon" href="https://personal.gieovannyfrias.com/Imagenes/Logo.webp" type="image/x-icon">
+<!--  lanazar confeti-->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
 <!--  google-->
   <title>Premios</title>
 
@@ -31,6 +34,10 @@
 
 </head>
 <body>
+  <audio id="audioelement" src="https://personal.gieovannyfrias.com/Musica/sonido_de_fondo_principal.mp3" loop></audio>
+
+  <div class="wrapper">
+  <main>
 <div class="ruleta_giratory">  
   <div class="ruleta-container">
     <div class="ruleta-wrapper">
@@ -45,11 +52,36 @@
     <div class="watermark">Gieovanny Frias personal</div>
   </div>
   </div>
+    
+  </main>
+  </div>
   <style>
   body {
   background-color: #181818;
   zoom:75%;
 }
+    
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 150px 0 0; /* espacio arriba en desktop */
+  position: relative; /* opcional */
+}
+
+/* Ajuste en pantallas pequeñas */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 80px 15px 0; /* menos espacio arriba y algo de padding lateral */
+  }
+}
+
+/* Ajuste aún más reducido en móviles muy pequeños */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 70px 10px 0; /* espacio más compacto */
+  }
+}
+
 .ruleta_giratory {
   /* El fondo se moverá al pseudo-elemento */
   display: flex;
@@ -57,8 +89,6 @@
   align-items: center;
   justify-content: center;
   font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
-position: relative;
-  top:50px;
 }
     
 .ruleta_giratory::before {
@@ -132,6 +162,29 @@ position: relative;
   align-items: center;
   justify-content: center;
   margin: 0;
+    animation: lucesRuleta 2s infinite; /* activa la animación */
+}
+    @keyframes lucesRuleta {
+  0% {
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    border-color: #ff0000;
+  }
+  25% {
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    border-color: #00ff00;
+  }
+  50% {
+    box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff;
+    border-color: #0000ff;
+  }
+  75% {
+    box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00;
+    border-color: #ffff00;
+  }
+  100% {
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    border-color: #ff00ff;
+  }
 }
 .ruleta canvas {
   width: 96vw !important;
@@ -166,6 +219,20 @@ position: relative;
   background: #1565c0;
   color: #fff;
   transform: translate(-50%, -50%) scale(0.97);
+}
+.premio-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.premio-img {
+  width:100%;
+  height: 400px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px #0005);
 }
 .premio {
   margin-top: 1px;
@@ -251,22 +318,23 @@ position: relative;
 
   <script>
   
-  const premios = [
-  'Taza',
-  'Gorra',
-  'Mouse',
-  'Café',
-  'Dulces',
-  'Llavero',
-  'Camiseta',
-  'Audífonos',
-  'Botella',
-  'Cuaderno',
-  'Powerbank',
-  'Agenda',
-  'Bolígrafo',
-  'Sticker'
+const premios = [
+  { nombre: 'Taza', img: 'https://lh3.googleusercontent.com/d/1RrBr3DhCq8vmXv2Pn88CFrMNLI1LlCP6=w1000' },
+  { nombre: 'Gorra', img: 'https://lh3.googleusercontent.com/d/1YjSHibt9VN7ADdEyfWZRJczwskjGn5Qr=w1000' },
+  { nombre: 'Mouse', img: 'https://lh3.googleusercontent.com/d/1VTOgNQUhFeNAsZ6oU2TMxYn5522rROcn=w1000' },
+  { nombre: 'Café', img: 'https://lh3.googleusercontent.com/d/1QyhbJQpJX2KUINhXS4vtSS0JY3LszANV=w1000' },
+  { nombre: 'Dulces', img: 'https://lh3.googleusercontent.com/d/10jqJ1iLr_vRtvftVzk2Eb_dxxVjMlogs=w1000' },
+  { nombre: 'Llavero', img: 'https://lh3.googleusercontent.com/d/19o0936G634Pr1UT5vihZDg-jyQY7Bbrk=w1000' },
+  { nombre: 'Camiseta', img: 'https://lh3.googleusercontent.com/d/12xJi8Sdb_LTbWM7BsywLmFafj-QWHOgN=w1000' },
+  { nombre: 'Audífonos', img: 'https://lh3.googleusercontent.com/d/1C68u--cyHVXpyFiCQZ0affp7GpF7px30=w1000' },
+  { nombre: 'Botella', img: 'https://lh3.googleusercontent.com/d/1l8VOCFer2T1BghVITTQ5WdQ8oavlug44=w1000' },
+  { nombre: 'Cuaderno', img: 'https://lh3.googleusercontent.com/d/1WjnVU2zBCGmcX3tzxuLTLuOSl8Pl133A=w1000' },
+  { nombre: 'Powerbank', img: 'https://lh3.googleusercontent.com/d/1tspt8zu06J4y6OpTK120xn8CEE3VTcle=w1000' },
+  { nombre: 'Agenda', img: 'https://lh3.googleusercontent.com/d/1JMFZgjwTWcnEHdy-JL9IU-WoxY5QrQ9L=w1000' },
+  { nombre: 'Bolígrafo', img: 'https://lh3.googleusercontent.com/d/1T-JJzS6T7_388YL1ZZCAXYgRb7oMjSD1=w1000' },
+  { nombre: 'Sticker', img: 'https://lh3.googleusercontent.com/d/1LDnUZDZP9jgjg3eLlhVpOwe6Kq7zWuFn=w1000' }
 ];
+
 const colores = [
   '#b3c6ff', '#5cacee', '#1976d2', '#64b5f6', '#2196f3', '#1565c0', '#90caf9', '#42a5f5', '#82b1ff', '#0d47a1', '#4fc3f7', '#1e88e5', '#80d8ff', '#2962ff'
 ];
@@ -282,7 +350,7 @@ let audioPlaying = false;
 
 function dibujarRuleta() {
   const radio = canvas.width / 2;
-  const botonRadio = Math.min(canvas.width, canvas.height) * 0.11; // Radio aproximado del botón de girar
+  const botonRadio = Math.min(canvas.width, canvas.height) * 0.11;
   for (let i = 0; i < premios.length; i++) {
     const angInicio = (2 * Math.PI / premios.length) * i;
     const angFin = angInicio + 2 * Math.PI / premios.length;
@@ -292,35 +360,32 @@ function dibujarRuleta() {
     ctx.closePath();
     ctx.fillStyle = colores[i % colores.length];
     ctx.fill();
+
     ctx.save();
     ctx.translate(radio, radio);
     ctx.rotate(angInicio + Math.PI / premios.length);
-    ctx.rotate(Math.PI); // Girar el texto para que esté "al revés" y se lea desde la flecha
+    ctx.rotate(Math.PI);
     ctx.textAlign = 'left';
-    // Ajustar tamaño de fuente según el largo del texto y la posición
+
     let fontSize = 22;
     ctx.font = `bold ${fontSize}px Segoe UI, Arial`;
-    // Si el texto está cerca del centro (ángulo cerca de 0 o PI), reducir aún más el ancho permitido
-    let sectorAngle = angInicio + Math.PI / premios.length;
-    let centralZone = (Math.abs(Math.cos(sectorAngle)) > 0.97); // cerca de la horizontal (donde está el botón)
     let maxWidth = radio - 48;
-    if (centralZone) {
-      maxWidth = radio - botonRadio - 32; // reducir más para evitar el botón
-    }
-    while (ctx.measureText(premios[i]).width > maxWidth && fontSize > 10) {
+    while (ctx.measureText(premios[i].nombre).width > maxWidth && fontSize > 10) {
       fontSize -= 1;
       ctx.font = `bold ${fontSize}px Segoe UI, Arial`;
     }
+
     ctx.fillStyle = '#fff';
     ctx.strokeStyle = '#1a237e';
     ctx.lineWidth = 4;
     ctx.shadowColor = '#0008';
     ctx.shadowBlur = 8;
-    ctx.strokeText(premios[i], 24 - radio, 12);
-    ctx.fillText(premios[i], 24 - radio, 12);
+    ctx.strokeText(premios[i].nombre, 24 - radio, 12);
+    ctx.fillText(premios[i].nombre, 24 - radio, 12);
     ctx.restore();
   }
 }
+
 
 dibujarRuleta();
 
@@ -328,23 +393,23 @@ function girarRuleta() {
   if (girando) return;
   girando = true;
   premioDiv.textContent = '';
-  // Reproducir sonido SIEMPRE en el click, reiniciando el audio
   audio.pause();
   audio.currentTime = 0;
-  audio.play().catch(() => {}); // Ignora errores de autoplay
-  const vueltas = Math.floor(Math.random() * 3) + 5; // 5-7 vueltas
-  // Elegimos un ángulo final aleatorio
+  audio.play().catch(() => {});
+  
+  const vueltas = Math.floor(Math.random() * 3) + 5;
   const anguloPorPremio = 2 * Math.PI / premios.length;
-  const anguloOffsetFlecha = Math.PI; // 180° (izquierda)
+  const anguloOffsetFlecha = Math.PI;
   const anguloRandom = Math.random() * 2 * Math.PI;
   const anguloFinal = (2 * Math.PI * vueltas) + anguloRandom;
-  const duracion = 10500; // 10.5 segundos
+  const duracion = 10500;
   const inicio = performance.now();
+
   function animar(now) {
     const t = Math.min((now - inicio) / duracion, 1);
-    // Ease out cubic
     const ease = 1 - Math.pow(1 - t, 3);
     anguloActual = ease * anguloFinal;
+
     ctx.save();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.translate(canvas.width / 2, canvas.height / 2);
@@ -352,11 +417,16 @@ function girarRuleta() {
     ctx.translate(-canvas.width / 2, -canvas.height / 2);
     dibujarRuleta();
     ctx.restore();
+
+    // Sonido de clic cada cierto ángulo
+    if (Math.floor(anguloActual / (Math.PI / 12)) !== Math.floor((anguloActual - 0.05) / (Math.PI / 12))) {
+      new Audio('https://personal.gieovannyfrias.com/Musica/sonido_click.mp3').play().catch(() => {});
+    }
+
     if (t < 1) {
       requestAnimationFrame(animar);
     } else {
       girando = false;
-      // Calcular el índice del premio alineado con la flecha izquierda
       let anguloTotal = anguloFinal % (2 * Math.PI);
       let anguloFlecha = (anguloOffsetFlecha - anguloTotal + 2 * Math.PI) % (2 * Math.PI);
       let premioIndex = Math.floor(anguloFlecha / anguloPorPremio) % premios.length;
@@ -366,11 +436,43 @@ function girarRuleta() {
   requestAnimationFrame(animar);
 }
 
+
 girarBtn.addEventListener('click', girarRuleta);
+function lanzarConfeti() {
+  const duration = 2 * 1000; // 2 segundos
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 }
+    });
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }());
+}
 
 function mostrarPremio(idx) {
-  premioDiv.textContent = `¡Ganaste: ${premios[idx]}! 🎉`;
+  const premio = premios[idx];
+  premioDiv.innerHTML = `
+    <div class="premio-contenedor">
+      <img src="${premio.img}" alt="${premio.nombre}" class="premio-img">
+      <span>¡Ganaste: ${premio.nombre}! 🎉</span>
+    </div>
+  `;
+  lanzarConfeti(); // dispara el confeti
 }
+
 
 // Redibuja la ruleta si cambia el tamaño (responsive)
 window.addEventListener('resize', () => {
@@ -380,6 +482,14 @@ window.addEventListener('resize', () => {
   canvas.width = size;
   canvas.height = size;
   dibujarRuleta();
+});
+    //audio de fondo mp3
+    document.addEventListener('click', function playSound() {
+    const audio = document.getElementById('audioelement');
+    audio.play().catch(error => {
+        console.error("Error al reproducir el audio:", error);
+    });
+    document.removeEventListener('click', playSound);
 });
   </script>
 </body>
