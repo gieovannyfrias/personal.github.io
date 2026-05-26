@@ -208,24 +208,24 @@ main {
   // Insertar navbar en <body>
   document.body.insertAdjacentHTML("afterbegin", `
     <nav class="navbar">
-      <a href="#" class="logo">Gieovanny Frías personal</a>
+      <a href="https://personal.gieovannyfrias.com" class="logo">Gieovanny Frías personal</a>
       <button class="menu-btn" id="m-btn">☰</button>
       <ul class="nav-links" id="m-menu">
-        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="https://personal.gieovannyfrias.com" class="nav-link">Inicio</a></li>
         <li class="nav-item has-drop">
           <a class="nav-link">Info <span class="arrow">▼</span></a>
           <ul class="submenu">
             <li class="nav-item has-drop">
-              <a href="/Instagram/" class="nav-link" target="_blank">Doc <span class="arrow">▶</span></a>
+              <a href="#" class="nav-link" target="_blank">Doc <span class="arrow">▶</span></a>
               <ul class="sub-submenu">
-                <li><a href="/Bolsa_de_empleo/" target="_blank" class="nav-link">Bolsa de trabajo</a></li>
+                <li><a href="/Bolsa_de_empleo" target="_blank" class="nav-link">Bolsa de trabajo</a></li>
               </ul>
             </li>
-            <li><a href="/Eventos/" class="nav-link">Eventos</a></li>
+            <li><a href="/Eventos" class="nav-link">Eventos</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a href="/Premios/" class="nav-link">Premios</a></li>
-        <li class="nav-item"><a href="/Contactos/" class="nav-link">Contacto</a></li>
+        <li class="nav-item"><a href="/Premios" class="nav-link">Premios</a></li>
+        <li class="nav-item"><a href="/Contacto" class="nav-link">Contacto</a></li>
       </ul>
     </nav>
   `);
