@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://personal.gieovannyfrias.com/Imagenes/Logo.webp" type="image/x-icon">
+<title>Personal</title>
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --danger: #f87171;
+      --bg-gradient: radial-gradient(circle at top left, #0f172a, #1e293b);
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --text: #f1f5f9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      zoom:75%;
+    }
+
+    .card {
+      backdrop-filter: blur(20px) saturate(150%);
+      background: var(--glass-bg);
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      animation: fadeIn 0.8s ease;
+    }
+
+ .icon {
+  color: var(--danger);
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: 2.2rem;
+      color: var(--danger);
+    }
+
+    p {
+      margin: 0.5rem 0 1.5rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .retry {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .retry:hover {
+      background: #1d4ed8;
+      transform: scale(1.08);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+<div class="icon">
+  <!-- Ícono de señal moderno en SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Nube -->
+  <path d="M30 50h20a10 10 0 0 0 0-20h-1a15 15 0 0 0-29-5 12 12 0 0 0 10 25z" />
+  <!-- Línea de cancelación -->
+  <line x1="20" y1="20" x2="60" y2="60" stroke="red" stroke-width="3" />
+</svg>
+
+</div>
+    <h1>Sin conexión</h1>
+    <p>No pudimos cargar las última información del empredededor porque no tienes acceso a internet.</p>
+    <p>Revisa tu conexión y vuelve a intentarlo.</p>
+    <a href="/" class="retry">Reintentar</a>
+  </div>
+</body>
+</html>
