@@ -36,14 +36,14 @@ display: flex; align-items: center;
 
         /* SUBMENÚS (DESKTOP) */
         .submenu {
-            position: absolute; top: 100%; left: 0; background: white;
+            position: absolute; top: 100%; left: 0;  background-color: rgba(255, 255, 255, 0.2);
             min-width: 200px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             border-radius: 10px; display: none; padding: 10px 0;
         }
 
         /* SEGUNDO NIVEL (Instagram -> Facebook) */
         .sub-submenu {
-            position: absolute; top: 0; left: 100%; background: white;
+            position: absolute; top: 0; left: 100%;  background-color: rgba(255, 255, 255, 0.2);
             min-width: 200px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             border-radius: 10px; display: none; padding: 10px 0;
         }
@@ -222,7 +222,7 @@ main {
               </ul>
             </li>
             <li><a href="/Eventos" class="nav-link">Eventos</a></li>
-            <li><a href="/Cv" class="nav-link">Cv</a></li>
+            <li><a href="/Portafolio" class="nav-link">Portafolio</a></li>
 
           </ul>
         </li>
