@@ -208,7 +208,7 @@ main {
   // Insertar navbar en <body>
   document.body.insertAdjacentHTML("afterbegin", `
     <nav class="navbar">
-      <a href="https://personal.gieovannyfrias.com" class="logo">Gieovanny Frías personal</a>
+      <a href="https://personal.gieovannyfrias.com" class="logo">Grupo JCF</a>
       <button class="menu-btn" id="m-btn">☰</button>
       <ul class="nav-links" id="m-menu">
         <li class="nav-item"><a href="https://personal.gieovannyfrias.com" class="nav-link">Inicio</a></li>
@@ -240,7 +240,7 @@ main {
       
       <!-- Sobre mí -->
       <div class="footer-section">
-        <h3>Gieovanny Frías personal</h3>
+        <h3>Grupo JCF</h3>
         <p>Inversionita | Empresario | Emprendedor | CEO | Director</p>
         <div class="social-icons">
           <a href="https://www.facebook.com/jovanicamachofrias" class="social-icon">
@@ -271,11 +271,11 @@ main {
       <div class="footer-section">
         <h3>Navegación</h3>
         <ul class="footer-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="Bolsa_de_empleo">Bolsa de empleo</a></li>
-          <li><a href="Eventos.html">Eventos</a></li>
-          <li><a href="Premios.html">Premios</a></li>
-          <li><a href="Contacto.html">Contacto</a></li>
+          <li><a href="https://personal.gieovannyfrias.com">Inicio</a></li>
+          <li><a href="/Bolsa_de_empleo">Bolsa de empleo</a></li>
+          <li><a href="/Eventos">Eventos</a></li>
+          <li><a href="/Premios">Premios</a></li>
+          <li><a href="/Contacto">Contacto</a></li>
         </ul>
       </div>
 
