@@ -226,6 +226,7 @@ main {
 
           </ul>
         </li>
+        <li class="nav-item"><a href="/Noticias" class="nav-link">Noticias</a></li>
         <li class="nav-item"><a href="/Premios" class="nav-link">Premios</a></li>
         <li class="nav-item"><a href="/Contacto" class="nav-link">Contacto</a></li>
       </ul>
