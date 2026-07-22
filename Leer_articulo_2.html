@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://personal.gieovannyfrias.com/Imagenes/Logo.webp" type="image/x-icon">
+<!--  google-->
+  <title>Articulo 2</title>
+
+<!--  canonical web-->
+  <link rel="canonical" href="https://personal.gieovannyfrias.com"/>
+
+<!-- Título que verá Google -->
+<meta name="title" content="Articulo 2">
+<meta name="description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="usuario, inversionista, emprendedor"/>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Articulo 2">
+  <meta property="og:description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+  <meta property="og:image" content="https://personal.gieovannyfrias.com/Imagenes/Logo.webp">
+  <meta property="og:url" content="https://personal.gieovannyfrias.com/Leer_articulo_2">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Articulo 2">
+  <meta name="twitter:description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+<meta name="twitter:image" content="https://personal.gieovannyfrias.com/Imagenes/Logo.webp">
+
+</head>
+<body>
+
+  <!-- Cabecera Cinemática Inicial -->
+  <header class="hero-fullscreen">
+    <div class="hero-meta-box">
+      <span class="hero-category">Personas</span>
+      <h1 class="hero-title-main">Titulo - No disponible</h1>
+    </div>
+  </header>
+
+  <!-- Contenedor del Artículo Estilo Revista -->
+  <div class="magazine-container">
+    
+    <!-- Bloque de Autor (Flotante reactivo mediante JS) -->
+    <aside class="author-sticky-card" id="author-card">
+      <div class="author-avatar"></div>
+      <h3 class="author-name">Gieovanny Frias</h3>
+      <span class="reading-time-pill">Lectura: 4 min</span>
+    </aside>
+
+    <!-- Cuerpo Editorial -->
+    <main class="editorial-text-block">
+      <p>Este es el primer párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+      <p>Este es el segundo párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+      <div class="editorial-divider">***</div>
+
+      <h2>Titulo - No disponible</h2>
+      <p>Este es el tercer párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+      <p>Este es el cuarto párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+      <h2>Titulo - No disponible</h2>
+      <p>Este es el quinto párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+    </main>
+
+  </div>
+
+  <style>
+    /* 1. CONFIGURACIÓN EDITORIAL EXCLUSIVA */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-cream: black; 
+      --text-charcoal: white;
+      --accent-terracotta: #c87a53;
+      --border-fade: rgba(28, 29, 31, 0.08);
+      --font-serif: 'Playfair Display', 'Georgia', serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --premium-bezier: cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-charcoal);
+      font-family: var(--font-sans);
+      line-height: 1.8;
+      overflow-x: hidden;
+      zoom:75%;
+    }
+
+    /* 2. PORTADA A PANTALLA COMPLETA (CINEMATIC COVER) */
+    .hero-fullscreen {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 80px 10%;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%), 
+                  url('https://unsplash.com');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Efecto paralaje sutil */
+    }
+
+    .hero-meta-box {
+      max-width: 800px;
+      color: #ffffff;
+    }
+
+    .hero-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      color: var(--accent-terracotta);
+      margin-bottom: 20px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .hero-title-main {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    /* 3. ARQUITECTURA DE CONTENIDO ASIMÉTRICO (MAGAZINE LAYOUT) */
+    .magazine-container {
+      max-width: 1140px;
+      margin: 80px auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+      position: relative;
+    }
+
+    /* Ficha del autor que se vuelve flotante interactiva */
+    .author-sticky-card {
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+      padding: 30px 0;
+      border-top: 1px solid var(--border-fade);
+      opacity: 0; /* JS la mostrará al hacer scroll */
+      transform: translateY(20px);
+      transition: all 0.8s var(--premium-bezier);
+    }
+
+    .author-sticky-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin-bottom: 15px;
+      background: url('https://unsplash.com') center/cover;
+    }
+
+    .author-name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+
+    .reading-time-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-terracotta);
+      font-weight: 600;
+    }
+
+    /* Bloque de lectura tipográfica impecable */
+    .editorial-text-block {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: #2d2e30;
+      max-width: 680px;
+    }
+
+    .editorial-text-block p {
+      margin-bottom: 40px;
+    }
+
+    /* Subtítulos integrados */
+    .editorial-text-block h2 {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--text-charcoal);
+      margin: 60px 0 30px 0;
+      font-weight: 700;
+    }
+
+    /* Separador minimalista premium */
+    .editorial-divider {
+      text-align: center;
+      margin: 60px 0;
+      color: var(--accent-terracotta);
+      font-size: 1.5rem;
+      letter-spacing: 0.5em;
+    }
+
+    /* RESPONSIVIDAD TRADICIONAL */
+    @media (max-width: 900px) {
+      .hero-title-main { font-size: 2.5rem; }
+      .magazine-container { grid-template-columns: 100%; gap: 30px; padding: 0 20px; }
+      .author-sticky-card { position: relative; top: 0; opacity: 1; transform: none; padding: 20px 0; border-bottom: 1px solid var(--border-fade); }
+      .editorial-text-block { font-size: 1.15rem; }
+    }
+  </style>
+          <script src="src/components/Header-Footer/header_footer-main.js" defer></script>
+
+  <!-- 4. LÓGICA JAVASCRIPT: REVELACIÓN GRADUAL EN SCROLL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const authorCard = document.getElementById('author-card');
+
+      window.addEventListener('scroll', () => {
+        // La tarjeta del autor aparece de forma fluida cuando el usuario baja más de 250px
+        if (window.scrollY > 250) {
+          authorCard.classList.add('visible');
+        } else {
+          authorCard.classList.remove('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://personal.gieovannyfrias.com/Imagenes/Logo.webp" type="image/x-icon">
+<!--  google-->
+  <title>Articulo 3</title>
+
+<!--  canonical web-->
+  <link rel="canonical" href="https://personal.gieovannyfrias.com"/>
+
+<!-- Título que verá Google -->
+<meta name="title" content="Articulo 3">
+<meta name="description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="usuario, inversionista, emprendedor"/>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Articulo 3">
+  <meta property="og:description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+  <meta property="og:image" content="https://personal.gieovannyfrias.com/Imagenes/Logo.webp">
+  <meta property="og:url" content="https://personal.gieovannyfrias.com/Leer_articulo_3">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Articulo 3">
+  <meta name="twitter:description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+<meta name="twitter:image" content="https://personal.gieovannyfrias.com/Imagenes/Logo.webp">
+
+</head>
+<body>
+
+  <!-- Barra de Navegación del Estudio -->
+  <nav class="studio-nav">
+    <a href="/Noticias" class="studio-logo">← Index Noticias</a>
+    <div class="nav-right-actions">
+      <div class="nav-progress-track" title="Progreso de lectura">
+        <div class="nav-progress-fill" id="reading-bar"></div>
+      </div>
+      <button class="btn-toggle-theme" id="theme-toggle">Modo Noche</button>
+    </div>
+  </nav>
+
+  <!-- Cabecera Tipográfica Monumental -->
+  <header class="hero-typography">
+    <span class="meta-tag">Sin pruebas</span>
+    <h1 class="hero-title-giant">Titulo - No disponible.</h1>
+  </header>
+
+  <!-- Contenido de Lectura Dividido -->
+  <div class="article-layout-brutalist">
+    
+    <!-- Información secundaria lateral -->
+    <aside class="article-sidebar-info">
+      <p>CRÓNICA / N° 04</p>
+      <p>ESCRITO POR: <strong>Gieovanny Frias</strong></p>
+      <p>FECHA: <strong>21 de Julio, 2026</strong></p>
+      <p>LECTURA: <strong>6 minutos</strong></p>
+    </aside>
+
+    <!-- Cuerpo del Artículo -->
+    <main class="content-body-clean" id="reading-zone">
+      <p>Este es el primer párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+      <p>Este es el segundo párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+      <h2>Titulo - No disponible</h2>
+      <p>Este es el tercer párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+      <p>Este es el cuarto párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+      <h2>Titulo - No disponible</h2>
+      <p>Este es el quinto párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+    </main>
+
+  </div>
+
+  <style>
+    /* 1. CONFIGURACIÓN MONOCHROME-LUXURY */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-studio: #ffffff;
+      --text-studio: #000000;
+      --text-muted: #707070;
+      --border-line: #e5e5e5;
+      --premium-bezier: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body {
+      background-color: var(--bg-studio);
+      color: var(--text-studio);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.75;
+      transition: background-color 0.6s var(--premium-bezier), color 0.6s var(--premium-bezier);
+      zoom:75%;
+    }
+
+    /* 2. MENÚ E INDICADOR DE PROGRESO COMBINADOS */
+    .studio-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--bg-studio);
+      border-bottom: 1px solid var(--border-line);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      transition: background-color 0.6s var(--premium-bezier), border-color 0.6s var(--premium-bezier);
+      padding-top: 100px;
+    }
+
+    .studio-logo {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 700;
+    }
+
+    .nav-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    /* Línea de lectura integrada en la navegación */
+    .nav-progress-track {
+      width: 120px;
+      height: 2px;
+      background: var(--border-line);
+      position: relative;
+    }
+
+    .nav-progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: var(--text-studio);
+      transition: width 0.1s linear, background-color 0.6s var(--premium-bezier);
+    }
+
+    .btn-toggle-theme {
+      background: transparent;
+      border: 1px solid var(--text-studio);
+      color: var(--text-studio);
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+    }
+
+    .btn-toggle-theme:hover {
+      background: var(--text-studio);
+      color: var(--bg-studio);
+    }
+
+    /* 3. CABECERA MONUMENTAL DE TEXTO (TYPOGRAPHIC HERO) */
+    .hero-typography {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 120px 10% 60px 10%;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .meta-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-title-giant {
+      font-size: clamp(2.5rem, 6vw, 5.5rem); /* Escalado perfecto según tamaño de pantalla */
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      max-width: 1100px;
+      margin-bottom: 40px;
+    }
+
+    /* 4. BLOQUE DE LECTURA LIMPIO (BRUTALIST TEXT CONTAINER) */
+    .article-layout-brutalist {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 10%;
+      display: grid;
+      grid-template-columns: 30% 70%;
+      gap: 40px;
+    }
+
+    .article-sidebar-info {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 2;
+    }
+
+    .article-sidebar-info strong {
+      color: var(--text-studio);
+    }
+
+    .content-body-clean {
+      font-size: 1.2rem;
+      color: var(--text-studio);
+      max-width: 680px;
+    }
+
+    .content-body-clean p {
+      margin-bottom: 40px;
+    }
+
+    /* Subtítulo integrado */
+    .content-body-clean h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 60px 0 30px 0;
+    }
+
+    /* MODO NOCHE PROFUNDA (ESTILOS REVERSOS) */
+    body.dark-mode {
+      --bg-studio: #0a0a0a;
+      --text-studio: #ffffff;
+      --text-muted: #7a7a7a;
+      --border-line: #1f1f1f;
+    }
+
+    /* RESPONSIVIDAD */
+    @media (max-width: 900px) {
+      .studio-nav { padding: 20px;flex-direction: column;
+        padding: 100px; }
+      .nav-progress-track { display: none; } /* Ocultar barra en celulares para dar espacio */
+      .article-layout-brutalist { grid-template-columns: 100%; gap: 40px; }
+      .hero-typography { min-height: auto; padding: 400px 20px 40px 20px; }
+    }
+  </style>
+            <script src="src/components/Header-Footer/header_footer-main.js" defer></script>
+
+  <!-- 5. LÓGICA JAVASCRIPT: PROGRESO INTEGRADO Y CAMBIO DE INTERFAZ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const readingBar = document.getElementById('reading-bar');
+      const themeToggle = document.getElementById('theme-toggle');
+
+      // A. CONTROLADOR DE PROGRESO DE LECTURA EN MENÚ SUPERIOR
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (docHeight > 0) {
+          const progressPercent = (scrollTop / docHeight) * 100;
+          readingBar.style.width = `${progressPercent}%`;
+        }
+      });
+
+      // B. INTERACCION INTERACTIVA DE CAMBIO DE MODO (LIGHT / DARK)
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // Cambia el texto del botón de forma dinámica según el modo activo
+        if (document.body.classList.contains('dark-mode')) {
+          themeToggle.textContent = 'Modo Día';
+        } else {
+          themeToggle.textContent = 'Modo Noche';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

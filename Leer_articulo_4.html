@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://personal.gieovannyfrias.com/Imagenes/Logo.webp" type="image/x-icon">
+<!--  google-->
+  <title>Articulo 4</title>
+
+<!--  canonical web-->
+  <link rel="canonical" href="https://personal.gieovannyfrias.com"/>
+
+<!-- Título que verá Google -->
+<meta name="title" content="Articulo 4">
+<meta name="description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="usuario, inversionista, emprendedor"/>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Articulo 4">
+  <meta property="og:description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+  <meta property="og:image" content="https://personal.gieovannyfrias.com/Imagenes/Logo.webp">
+  <meta property="og:url" content="https://personal.gieovannyfrias.com/Leer_articulo_4">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Articulo 4">
+  <meta name="twitter:description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+<meta name="twitter:image" content="https://personal.gieovannyfrias.com/Imagenes/Logo.webp">
+
+</head>
+<body>
+
+  <!-- Barra de Navegación Cinemática -->
+  <nav class="cinema-nav">
+    <a href="/Noticias" class="nav-logo-back">← Regresar Noticias</a>
+    <div class="read-time-dynamic" id="dynamic-time">Quedan 5 min de lectura</div>
+  </nav>
+
+  <!-- Portada Inicial Dividida -->
+  <header class="hero-split">
+    <div class="hero-text-side">
+      <span class="hero-subtitle-tag">Aprobado</span>
+      <h1 class="hero-title-bold">Titulo - No disponible.</h1>
+    </div>
+    <div class="hero-image-side"></div>
+  </header>
+
+  <!-- Bloque de Lectura Dinámica -->
+  <main class="reading-scroller-layout">
+    <p>Este es el primer párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+    <p>Este es el segundo párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+    <h2 class="section-title-clean">Titulo - No disponible</h2>
+    <p>Este es el tercer párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+    <!-- Ventana Parallax Interactiva -->
+    <div class="parallax-window"></div>
+
+    <p>Este es el cuarto párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+    <p>Este es el quinto párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+  </main>
+  
+  <style>
+    /* 1. CONFIGURACIÓN CINEMÁTICA Y GRADIENTES PROFUNDOS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-deep: #050608;
+      --surface-matte: #0b0d11;
+      --accent-cyan: #00e5ff;
+      --text-glow: #f1f5f9;
+      --border-glow: rgba(0, 229, 255, 0.1);
+      --font-premium: 'Inter', system-ui, -apple-system, sans-serif;
+      --premium-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: #94a3b8;
+      font-family: var(--font-premium);
+      line-height: 1.8;
+      overflow-x: hidden;
+      zoom:75%;
+    }
+
+    /* 2. MENÚ FLOTANTE ASIMÉTRICO */
+    .cinema-nav {
+      position: fixed;
+      top: 100px;
+      left: 30px;
+      right: 30px;
+      background: rgba(11, 13, 17, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 15px 30px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      padding-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo-back {
+      color: var(--text-glow);
+      text-decoration: none;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-logo-back:hover { color: var(--accent-cyan); }
+
+    .read-time-dynamic {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-cyan);
+    }
+
+    /* 3. PORTADA CINEMÁTICA DIVISIONAL (SPLIT HERO) */
+    .hero-split {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-items: center;
+      border-bottom: 1px solid var(--border-glow);
+    }
+
+    .hero-text-side {
+      padding: 0 10%;
+    }
+
+    .hero-subtitle-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      color: var(--accent-cyan);
+      margin-bottom: 25px;
+      display: block;
+    }
+
+    .hero-title-bold {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--text-glow);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-image-side {
+      height: 100%;
+      background: linear-gradient(90deg, var(--bg-deep) 0%, transparent 40%),
+                  url('https://unsplash.com') center/cover no-repeat;
+    }
+
+    /* 4. ARQUITECTURA DE REVELACIÓN (SCROLL-THROUGH WINDOWS) */
+    .reading-scroller-layout {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 0 24px;
+    }
+
+    .reading-scroller-layout p {
+      margin-bottom: 40px;
+      font-size: 1.15rem;
+    }
+
+    /* Ventana de imagen fija interactiva */
+    .parallax-window {
+    
+      height: 400px;
+      margin: 80px 0;
+      border-radius: 16px;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+      background-image: url('https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000');
+      background-position: center;
+      background-size: cover;
+    }
+
+    .section-title-clean {
+      font-size: 1.8rem;
+      color: var(--text-glow);
+      font-weight: 700;
+      margin: 60px 0 25px 0;
+      letter-spacing: -0.02em;
+    }
+
+    /* RESPONSIVIDAD SÓLIDA */
+    @media (max-width: 900px) {
+      .hero-split { grid-template-columns: 100%; height: auto; padding-top: 300px; }
+      .hero-image-side { height: 350px; margin-top: 40px; background: linear-gradient(180deg, var(--bg-deep) 0%, transparent 20%), url('https://unsplash.com') center/cover; }
+      .hero-title-bold { font-size: 2.3rem; }
+      .parallax-window { background-attachment: scroll; height: 250px; } /* Desactiva parallax en móviles para rendimiento */
+    }
+  </style>
+            <script src="src/components/Header-Footer/header_footer-main.js" defer></script>
+
+  <!-- 5. LÓGICA DE CONTROL CONTINUO EN JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dynamicTime = document.getElementById('dynamic-time');
+      const totalReadingTime = 5; // Tiempo inicial estimado en minutos
+
+      // A. CÁLCULO INTELIGENTE DEL TIEMPO RESTANTE DE LECTURA
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (docHeight > 0) {
+          const progressPercent = scrollTop / docHeight;
+          
+          // Calcula los minutos restantes restando la proporción del avance actual
+          const timeRemaining = Math.ceil(totalReadingTime * (1 - progressPercent));
+          
+          if (timeRemaining > 1) {
+            dynamicTime.textContent = `Quedan ${timeRemaining} min de lectura`;
+          } else if (timeRemaining === 1) {
+            dynamicTime.textContent = 'Queda 1 min de lectura';
+          } else {
+            dynamicTime.textContent = 'Lectura completada ✓';
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
