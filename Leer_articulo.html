@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+   <link rel="icon" href="https://personal.gieovannyfrias.com/Imagenes/Logo.webp" type="image/x-icon">
+<!--  google-->
+  <title>Articulo 0</title>
+
+<!--  canonical web-->
+  <link rel="canonical" href="https://personal.gieovannyfrias.com"/>
+
+<!-- Título que verá Google -->
+<meta name="title" content="Articulo 0">
+<meta name="description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="usuario, inversionista, emprendedor"/>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Articulo 0">
+  <meta property="og:description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+  <meta property="og:image" content="https://personal.gieovannyfrias.com/Imagenes/Logo.webp">
+  <meta property="og:url" content="https://personal.gieovannyfrias.com/Leer_articulo">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Articulo 0">
+  <meta name="twitter:description" content="Este articulo esta comprobado por nuestra pagina oficial en caso de distribuirse por otros medios.">
+<meta name="twitter:image" content="https://personal.gieovannyfrias.com/Imagenes/Logo.webp">
+
+</head>
+<body>
+
+  <!-- Barra de progreso superior -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" id="progress-bar"></div>
+  </div>
+
+  <!-- Menú flotante -->
+  <nav class="editorial-nav">
+    <a href="/Noticias" class="back-link">← Volver</a>
+    <div class="text-controls">
+      <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Texto</span>
+      <button class="control-btn" id="btn-dec" title="Reducir fuente">A-</button>
+      <button class="control-btn" id="btn-inc" title="Aumentar fuente">A+</button>
+    </div>
+  </nav>
+
+  <!-- Encabezado del Artículo -->
+  <header class="article-hero">
+    <span class="article-category">Estrategia difamación</span>
+    <h1 class="article-title">No disponible - Titulo</h1>
+    <div class="article-meta">
+      <span>Por <strong>Gieovanny Frias</strong></span>
+      <span>•</span>
+      <span>Lectura: 5 min</span>
+      <span>•</span>
+      <span id="reading-percentage">0% leído</span>
+    </div>
+  </header>
+
+  <!-- Contenido Editorial -->
+  <main class="article-body" id="article-content">
+    <p>Este es el primer párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+    <p>Este es el segundo párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada..</p>
+
+    <div class="editorial-quote">
+      "Este es un editorial del párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.."
+    </div>
+
+    <p>Este es el tercer párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada.</p>
+
+    <div class="article-inline-image">
+      <img src="https://lh3.googleusercontent.com/d/1ZKVltJP559XoWmaAtCDgkFKV_uqWAwz8=w1000" alt="Arquitectura Brutalista de Lujo">
+    </div>
+
+    <p>Este es el cuarto párrafo de mi página web. Los navegadores muestran cada bloque en una línea separada..</p>
+  </main>
+
+  <style>
+    /* 1. DISEÑO BASE LUXURY */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-editorial: #0b0c10;
+      --text-editorial: #e4e6eb;
+      --text-muted: #9ca3af;
+      --accent-gold: #d4af37;
+      --surface-light: #16171d;
+      --font-serif: 'Playfair Display', 'Georgia', serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --premium-bezier: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body {
+      background-color: var(--bg-editorial);
+      color: var(--text-editorial);
+      font-family: var(--font-sans);
+      line-height: 1.8;
+      overflow-x: hidden;
+      zoom:75%;
+    }
+
+    /* 2. BARRA DE PROGRESO DE LECTURA (DINÁMICA) */
+    .progress-bar-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      z-index: 1000;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-gold), #fff);
+      box-shadow: 0 0 8px var(--accent-gold);
+      transition: width 0.1s linear;
+    }
+
+    /* 3. MENÚ DE NAVEGACIÓN Y AJUSTES FLOTANTE */
+    .editorial-nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 800px;
+      background: rgba(22, 23, 29, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px 24px;
+      border-radius: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .back-link {
+      color: var(--text-editorial);
+      text-decoration: none;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .back-link:hover { color: var(--accent-gold); }
+
+    .text-controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .control-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-editorial);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .control-btn:hover {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+    }
+
+    /* 4. CABECERA CINEMÁTICA DEL ARTÍCULO */
+    .article-hero {
+      width: 100%;
+      max-width: 900px;
+      margin: 140px auto 40px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .article-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--accent-gold);
+      margin-bottom: 20px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 30px;
+      background: linear-gradient(180deg, #fff 0%, #b2b8c3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .article-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 30px;
+    }
+
+    /* 5. CUERPO DE LECTURA ASIMÉTRICO Y CUIDADO */
+    .article-body {
+      width: 100%;
+      max-width: 740px;
+      margin: 0 auto 100px auto;
+      padding: 0 24px;
+      font-size: 1.15rem; /* Tamaño premium ideal para lectura prolongada */
+      letter-spacing: -0.003em;
+      transition: font-size 0.4s var(--premium-bezier);
+    }
+
+    /* Letra capital lujosa al inicio */
+    .article-body p:first-of-type::first-letter {
+      font-family: var(--font-serif);
+      font-size: 4.8rem;
+      float: left;
+      line-height: 0.8;
+      margin-right: 12px;
+      margin-top: 4px;
+      color: var(--accent-gold);
+    }
+
+    .article-body p {
+      margin-bottom: 30px;
+      color: #d1d5db;
+    }
+
+    /* Cita destacada elegante */
+    .editorial-quote {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      line-height: 1.4;
+      color: #ffffff;
+      border-left: 2px solid var(--accent-gold);
+      padding-left: 30px;
+      margin: 50px 0 50px -40px;
+      font-style: italic;
+    }
+
+    /* Imagen interna estilizada */
+    .article-inline-image {
+      width: calc(100% + 80px);
+      margin: 50px 0 50px -40px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .article-inline-image img {
+      width: 100%;
+      height: 500px;
+      display: block;
+      opacity: 0.85;
+    }
+
+    /* 6. RESPONSIVIDAD */
+    @media (max-width: 768px) {
+      .article-title { font-size: 2.2rem; }
+      .editorial-quote, .article-inline-image {
+        width: 100%;
+        margin-left: 0;
+      }
+      .article-body { font-size: 1.05rem; }
+    }
+  </style>
+        <script src="src/components/Header-Footer/header_footer-main.js" defer></script>
+  <!-- 7. LÓGICA INTERACTIVA EN JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const progressBar = document.getElementById('progress-bar');
+      const readingPercentage = document.getElementById('reading-percentage');
+      const articleContent = document.getElementById('article-content');
+      const btnInc = document.getElementById('btn-inc');
+      const btnDec = document.getElementById('btn-dec');
+
+      // A. CÁLCULO DINÁMICO DE SCROLL Y PROGRESO DE LECTURA
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        // Evita errores de división por cero si la página no tiene scroll
+        if (docHeight > 0) {
+          const progress = (scrollTop / docHeight) * 100;
+          const roundedProgress = Math.round(progress);
+          
+          // Actualiza los elementos visuales
+          progressBar.style.width = `${progress}%`;
+          readingPercentage.textContent = `${roundedProgress}% leído`;
+        }
+      });
+
+      // B. CONTROLADOR ACCESIBLE DE TAMAÑO DE FUENTE
+      let currentFontSize = 1.15; // Tamaño inicial en em
+
+      btnInc.addEventListener('click', () => {
+        if (currentFontSize < 1.45) { // Límite máximo de aumento
+          currentFontSize += 0.05;
+          articleContent.style.fontSize = `${currentFontSize}rem`;
+        }
+      });
+
+      btnDec.addEventListener('click', () => {
+        if (currentFontSize > 0.95) { // Límite mínimo de reducción
+          currentFontSize -= 0.05;
+          articleContent.style.fontSize = `${currentFontSize}rem`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
