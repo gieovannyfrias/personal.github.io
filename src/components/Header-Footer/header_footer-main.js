@@ -208,7 +208,8 @@ main {
   // Insertar navbar en <body>
   document.body.insertAdjacentHTML("afterbegin", `
     <nav class="navbar">
-      <a href="https://personal.gieovannyfrias.com" class="logo">Grupo JCF</a>
+      <a href="https://personal.gieovannyfrias.com" class="logo">
+    <img src="https://lh3.googleusercontent.com/d/1v4tEmkCltzZxhOjyng8eCNXWh-QuW4jI=w1000" style="width: 60px; height: 60px;"></a>
       <button class="menu-btn" id="m-btn">☰</button>
       <ul class="nav-links" id="m-menu">
         <li class="nav-item"><a href="https://personal.gieovannyfrias.com" class="nav-link">Inicio</a></li>
@@ -241,8 +242,8 @@ main {
       
       <!-- Sobre mí -->
       <div class="footer-section">
-        <h3>Grupo JCF</h3>
-        <p>Inversionita | Empresario | Emprendedor | CEO | Director</p>
+ <img src="https://lh3.googleusercontent.com/d/1v4tEmkCltzZxhOjyng8eCNXWh-QuW4jI=w1000" style="width: 60px; height: 60px;">
+<p>Inversionita | Empresario | Emprendedor | CEO | Director</p>
         <div class="social-icons">
           <a href="https://www.facebook.com/jovanicamachofrias" class="social-icon">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
